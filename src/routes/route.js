@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
+import Courses from "../pages/Courses/Courses";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
@@ -21,7 +22,10 @@ const router = createBrowserRouter([
             },
             {
                 path: '/home',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: ()=>{
+                    return fetch('https://learn23-server.vercel.app/courses/')
+                }
             },
             {
                 path: '/login',
@@ -30,6 +34,13 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/courses',
+                element: <Courses></Courses>,
+                loader: ()=>{
+                    return fetch('https://learn23-server.vercel.app/courses/')
+                }
             }
         ]
     }

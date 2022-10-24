@@ -33,7 +33,7 @@ const Home = () => {
 
                     >
                         {courses.map((course, index) => <SwiperSlide key={index}>
-                            <div className="">
+                            <div className="border border-white rounded-md">
                                 <img className='h-[100px] md:w-[400px] md:h-[350px] rounded-xl' src={course.image} alt="" />
                             </div>
                         </SwiperSlide>)}
