@@ -1,4 +1,4 @@
-import { faMoon, faRightToBracket, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faRightToBracket, faSun, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -6,6 +6,7 @@ import logo from '../assets/logo.png';
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
+    const user = ''
 
     return (
         <div className="flex justify-between w-11/12 md:w-10/12 mx-auto py-3">
@@ -45,9 +46,9 @@ const Header = () => {
                         toggle ? <div><p>Dark <FontAwesomeIcon icon={faMoon} /></p></div> : <p>Light <FontAwesomeIcon icon={faSun} /></p>
                     }
                 </div>
-                <div>
-                    <button className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Login</span></button>
-                </div>
+                {user ? user.photoURL || <FontAwesomeIcon icon={faUser} /> : <div>
+                    <Link to='/login'> <button className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Login</span></button></Link>
+                </div>}
             </div>
         </div>
     );

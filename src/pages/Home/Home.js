@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import achivements from '../assets/achivements.jpeg';
-import appuser from '../assets/appuser.webp';
-import students from '../assets/students.webp';
-import teacher from '../assets/teacher.webp';
-import videos from '../assets/videos.webp';
+import achivements from '../../assets/achivements.jpeg';
+import appuser from '../../assets/appuser.webp';
+import students from '../../assets/students.webp';
+import teacher from '../../assets/teacher.webp';
+import videos from '../../assets/videos.webp';
 
 
 const Home = () => {
