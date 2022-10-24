@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home";
 
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -10,7 +11,10 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: ()=>{
+                    return fetch('https://learn23-server.vercel.app/courses/')
+                }
             },
             {
                 path: '/home',
