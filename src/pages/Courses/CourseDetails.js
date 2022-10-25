@@ -6,7 +6,7 @@ import Pdf from "react-to-pdf";
 
 const CourseDetails = () => {
     const course = useLoaderData();
-    const { courseName, image, rating, price, students, videos, quiz, instractor, details, category, id} = course;
+    const { courseName, image, rating, price, students, videos, quiz, instractor, details, category, id } = course;
 
     const ref = createRef();
     const options = {
@@ -14,10 +14,10 @@ const CourseDetails = () => {
     };
     return (
         <div>
-            <div ref={ref} className="w-10/12 flex gap-6 justify-between mx-auto mt-10 font-bold">
+            <div ref={ref} className="w-10/12 md:flex gap-6 justify-between mx-auto mt-10 font-bold">
 
                 {/* Left Side */}
-                <div className="w-4/12 border-4 border-orange-400  rounded-lg  bg-gray-300 ">
+                <div className="md:w-4/12 border-4 border-orange-400  rounded-lg  bg-gray-300 ">
                     <div>
                         <div>
                             <img src={image} alt="" />
@@ -27,7 +27,7 @@ const CourseDetails = () => {
                         </div>
                         <div>
                             <Link to={`/checkout/${id}`}> <button className="px-3 w-10/12 mx-auto py-2 flex justify-between bg-white hover:bg-orange-400 border-2 border-orange-400 hover:border-black rounded-md items-center gap-3 hover:text-white ">
-                                Start The Course <FontAwesomeIcon icon={faArrowRight} />
+                                Get premium access <FontAwesomeIcon icon={faArrowRight} />
                             </button></Link>
                         </div>
 
@@ -65,14 +65,14 @@ const CourseDetails = () => {
                 </div>
 
                 {/* Right Side */}
-                <div className="w-8/12 bg-gray-300 rounded-lg border-4 border-orange-400 px-6">
+                <div className="md:w-8/12 bg-gray-300 rounded-lg border-4 border-orange-400 px-6">
                     <div className="">
-                        <div className="flex justify-between items-center">
+                        <div className="md:flex md:justify-between md:items-center">
                             <h1 className="w-10/12 text-4xl font-bold my-4">{courseName}</h1>
                             <div className="border border-orange-400 bg-orange-400 text-white rounded-lg px-2">
-                            <Pdf targetRef={ref} options={options} filename="course-details.pdf">
-                                {({ toPdf }) => <button onClick={toPdf}>Download <FontAwesomeIcon icon={faFilePdf} /></button>}
-                            </Pdf>                            </div>
+                                <Pdf targetRef={ref} options={options} filename="course-details.pdf">
+                                    {({ toPdf }) => <button onClick={toPdf}>Download <FontAwesomeIcon icon={faFilePdf} /></button>}
+                                </Pdf>                            </div>
 
                         </div>
 
@@ -80,7 +80,7 @@ const CourseDetails = () => {
                     </div>
                     <div className="mt-10">
                         <h1 className="text-2xl font-bold">Instractor:</h1>
-                        <div className="flex items-center gap-3 p-4 border-2 rounded-lg border-orange-400 my-2">
+                        <div className="md:flex items-center gap-3 p-4 border-2 rounded-lg border-orange-400 my-2">
                             <div>
                                 <img className="h-24 w-24 rounded-full" src={instractor?.profileImg} alt="" />
                             </div>

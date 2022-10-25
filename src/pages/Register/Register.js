@@ -44,9 +44,13 @@ const Register = () => {
             else if(e.message === 'Firebase: Error (auth/internal-error).'){
                 toast.error('Invalid Password or Internal Error')
             }
+            else{
+                toast.error(e.message);
+            }
         })
-        
     }
+
+    
     
     return (
         <div className="pb-20">
