@@ -1,12 +1,17 @@
 import { faMoon, faRightToBracket, faSun, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.png';
+import { AuthProvider } from "../context/UseContext";
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
-    const user = ''
+    const { user, logOut } = useContext(AuthProvider);
+
+    const userSignOut = () => {
+        logOut().then(()=>{}).catch(()=>{})
+    }
 
     return (
         <div className="flex justify-between w-11/12 md:w-10/12 mx-auto py-3">
@@ -46,9 +51,19 @@ const Header = () => {
                         toggle ? <div><p>Dark <FontAwesomeIcon icon={faMoon} /></p></div> : <p>Light <FontAwesomeIcon icon={faSun} /></p>
                     }
                 </div>
-                {user ? user.photoURL || <FontAwesomeIcon icon={faUser} /> : <div>
+                {
+                    user ? <div>
+                        { <img className="w-8 h-8 rounded-full inline mr-4" src={user.photoURL} alt='User Profile' /> || <FontAwesomeIcon icon={faUser} /> }
+                    <Link to='/'> <button onClick={userSignOut} className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Log Out</span></button></Link>
+                </div> : <div>
                     <Link to='/login'> <button className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Login</span></button></Link>
-                </div>}
+                </div>
+                }
+
+
+
+
+                {/* {user ? user.photoURL || <FontAwesomeIcon icon={faUser} />} :  */}
             </div>
         </div>
     );

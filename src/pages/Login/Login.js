@@ -1,11 +1,29 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthProvider } from "../../context/UseContext";
 
 const Login = () => {
+    const {signInByEmailPass} = useContext(AuthProvider);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
+    const handleSingIn = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        signInByEmailPass(email,password).then(()=>{
+            navigate(`${from}`)
+        }).catch((e)=>{
+            console.log(e.message)
+        })
+    }
     return (
-        <div className="">
+        <div>
             <div className="w-11/12 mx-auto max-w-md p-8 space-y-3 rounded-xl  border border-black mt-20">
                 <h1 className="text-2xl font-bold text-orange-400 text-center">Login</h1>
-                <form action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
+                <form onSubmit={handleSingIn} className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="email" className="block text-orange-400 font-bold">Email</label>
                         <input type="text" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
