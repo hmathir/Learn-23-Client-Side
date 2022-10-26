@@ -1,5 +1,9 @@
+import { Icon } from 'leaflet';
+import markerIconPng from "leaflet/dist/images/marker-icon.png";
+import 'leaflet/dist/leaflet.css';
 import { useContext, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import achivements from '../../assets/achivements.jpeg';
@@ -9,10 +13,10 @@ import teacher from '../../assets/teacher.webp';
 import videos from '../../assets/videos.webp';
 import { AuthProvider } from "../../context/UseContext";
 
-
 const Home = () => {
     const [swiper, setSwiper] = useState({});
     const courses = useLoaderData();
+    const naviagte = useNavigate();
     const { dark } = useContext(AuthProvider);
     return (
         <div>
@@ -30,13 +34,11 @@ const Home = () => {
                         }}
                         spaceBetween={40}
                         slidesPerView={3.5}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
 
                     >
                         {courses.map((course, index) => <SwiperSlide key={index}>
                             <div className="border border-white rounded-md">
-                                <img className='h-[100px] md:w-[400px] md:h-[350px] rounded-xl' src={course.image} alt="" />
+                                <img onClick={() => { naviagte(`/courses/${course.id}`) }} className='cursor-pointer h-[100px] md:w-[400px] md:h-[350px] rounded-xl' src={course.image} alt="" />
                             </div>
                         </SwiperSlide>)}
                     </Swiper>
@@ -102,6 +104,18 @@ const Home = () => {
                     </div>
                 </div>
 
+            </div>
+
+
+            <div className={`text-3xl text-center md:text-6xl font-bold ${dark ? "bg-black" : "bg-white"} ${dark ? "text-white" : "text-black"}`}>
+            <h1 className='py-4'>Find Us On Map:</h1>
+                <MapContainer center={[23.7936943, 90.4031814]} zoom={13} scrollWheelZoom={false}>
+                    <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <Marker position={[23.7936943, 90.4031814]} icon={new Icon({ iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41] })} />
+                </MapContainer>
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import { faMoon, faRightToBracket, faSun, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from '../assets/logo.png';
 import teacher from '../assets/teacher.webp';
 import { AuthProvider } from "../context/UseContext";
@@ -21,10 +21,10 @@ const Header = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu bg-gray-500 menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52">
-                        <Link to='/'>HOME</Link>
-                        <Link to='/courses'>COURSES</Link>
-                        <Link to='/faqs'>FAQ</Link>
-                        <Link to='/blogs'>BLOGS</Link>
+                        <NavLink style={({ isActive }) => { return { color: isActive ? 'skyblue' : 'orange' } }} to='/home'>HOME</NavLink>
+                        <NavLink style={({ isActive }) => { return { color: isActive ? 'skyblue' : 'orange' } }} to='/courses'>COURSES</NavLink>
+                        <NavLink style={({ isActive }) => { return { color: isActive ? 'skyblue' : 'orange' } }} to='/faqs'>FAQ</NavLink>
+                        <NavLink style={({ isActive }) => { return { color: isActive ? 'skyblue' : 'orange' } }} to='/blogs'>BLOGS</NavLink>
                         <div className="md:hidden  cursor-pointer" onClick={() => setDark(!dark)}>
                             {
                                 dark ? <p>Light <FontAwesomeIcon icon={faSun} /></p> : <div><p>Dark <FontAwesomeIcon icon={faMoon} /></p></div>
@@ -39,10 +39,10 @@ const Header = () => {
                     </div>
                     <div className="hidden md:block">
                         <ul className="space-x-6">
-                            <Link to='/'>HOME</Link>
-                            <Link to='/courses'>COURSES</Link>
-                            <Link to='/faqs'>FAQ</Link>
-                            < Link to='/blogs'>BLOGS</Link>
+                            <NavLink style={({ isActive }) => { return { color: isActive ? 'skyblue' : 'orange' } }} to='/home'>HOME</NavLink>
+                            <NavLink style={({ isActive }) => { return { color: isActive ? 'skyblue' : 'orange' } }} to='/courses'>COURSES</NavLink>
+                            <NavLink style={({ isActive }) => { return { color: isActive ? 'skyblue' : 'orange' } }} to='/faqs'>FAQ</NavLink>
+                            <NavLink style={({ isActive }) => { return { color: isActive ? 'skyblue' : 'orange' } }} to='/blogs'>BLOGS</NavLink>
                         </ul>
                     </div>
                 </div>
@@ -54,13 +54,13 @@ const Header = () => {
                     </div>
                     {
                         user ? <div className="tooltip tooltip-left flex items-center" data-tip={user.displayName}>
-                            <Link to='/profile' className=" cursor-pointer">
+                            <NavLink to='/profile' className=" cursor-pointer">
                                 {<img className="first-letter:w-8 h-8 rounded-full inline mr-4" src={user?.photoURL ? user.photoURL : teacher} alt='User Profile' /> || <FontAwesomeIcon icon={faUser} />}
-                            </Link>
+                            </NavLink>
 
-                            <Link to='/'> <button onClick={userSignOut} className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Log Out</span></button></Link>
+                            <NavLink to='/'> <button onClick={userSignOut} className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Log Out</span></button></NavLink>
                         </div> : <div>
-                            <Link to='/login'> <button className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Login</span></button></Link>
+                            <NavLink to='/login'> <button className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Login</span></button></NavLink>
                         </div>
                     }
 

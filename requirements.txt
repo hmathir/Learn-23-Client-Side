@@ -27,7 +27,7 @@ Clicking "Courses" in the navbar (You can change this name to any meaningful nam
 -----DONE------
 The Courses page will be divided into two parts: a sidebar (either on the left side or on the right side according to your design) & content detail section. In the sidebar, there will be at least 6 options (course options or course categories, or anything else). Every option is clickable. (You will need to create necessary fake data)
 
-!!! PENDING -> WHAT YOU WILL LEARN FROM THIS COURSE!!!
+-----DONE------
 When you click an option (course card or an option on the left/right sidebar), It will take you to the course detail page. Content details depend on you. But, it must include a header, introductory description/course body, and one image. All details must be relevant to the topic. You may include a bullet list/ table/ chart if needed.
 
 -----DONE------
@@ -71,7 +71,7 @@ Clicking "Blog" will redirect to a public route. That route will have 4 question
 
 
 
-!!! LIVE SITE LIKE HAVE TO ADD !!!
+-----DONE------
 (client-side repo) Meaningful readme.md file containing your website name and link to your live site. And at least five bullet points mentioning your website's different features and functionality. And a list of technologies (frameworks, libraries) used in your project. (added a meaningful readme.md file for the server-side repo is optional)
 
 
@@ -89,6 +89,7 @@ Optional (But Highly Recommended):
 -----DONE------
 Add a link for Password reset (use toast/ alert), (Don't worry if the email goes to the spam folder.)
 
+-----DONE------
 Add "active route" to indicate the route which you are visiting.
 
 -----DONE------

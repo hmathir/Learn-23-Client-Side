@@ -14,7 +14,7 @@ const CourseDetails = () => {
     };
     return (
         <div>
-            <div ref={ref} className="w-10/12 md:flex gap-6 justify-between mx-auto mt-10 font-bold">
+            <div ref={ref} className="w-10/12 md:flex gap-6 justify-between mx-auto py-10 font-bold">
 
                 {/* Left Side */}
                 <div className="md:w-4/12 border-4 border-orange-400  rounded-lg  bg-gray-300 ">
@@ -65,7 +65,7 @@ const CourseDetails = () => {
                 </div>
 
                 {/* Right Side */}
-                <div className="md:w-8/12 bg-gray-300 rounded-lg border-4 border-orange-400 px-6">
+                <div className="mt-10 md:mt-0 md:w-8/12 bg-gray-300 rounded-lg border-4 border-orange-400 px-6">
                     <div className="">
                         <div className="md:flex md:justify-between md:items-center">
                             <h1 className="w-10/12 text-4xl font-bold my-4">{courseName}</h1>
@@ -87,6 +87,30 @@ const CourseDetails = () => {
                             <div>
                                 <h1 className="text-xl font-bold">{instractor?.name}</h1>
                                 <p>{instractor?.details}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="mt-10">
+                        <h1 className="text-2xl font-bold">What You Will Learn: (Static Data)</h1>
+                        <div className="md:flex items-center gap-3 p-4 border-2 rounded-lg border-orange-400 my-2">
+                            <div className="w-full mx-auto grid grid-cols-2 md:grid-cols-4 gap-x-6">
+                                <ul>
+                                    <li> <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} />Course Topics</li>
+                                    <li> <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} />Course Topics</li>
+                                </ul>
+                                <ul>
+                                    <li> <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} />Course Topics</li>
+                                    <li> <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} />Course Topics</li>
+                                </ul>
+                                <ul>
+                                    <li> <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} />Course Topics</li>
+                                    <li> <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} />Course Topics</li>
+                                </ul>
+                                <ul>
+                                    <li> <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} />Course Topics</li>
+                                    <li> <FontAwesomeIcon className="text-green-500 mr-2" icon={faCheck} />Course Topics</li>
+                                </ul>
                             </div>
 
                         </div>
