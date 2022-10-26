@@ -5,7 +5,7 @@ import { AuthProvider } from "../context/UseContext";
 const Footer = () => {
     const {dark} = useContext(AuthProvider);
     return (
-        <div className={`${dark ? "bg-black" : "bg-white"} ${dark ? "text-white" : "text-white"}`}>
+        <div className={`${dark ? "bg-black" : "bg-white"} ${dark ? "text-white" : "text-black"}`}>
             <footer>
                 <div className="w-10/12 mx-auto flex flex-col p-4 md:p-8 lg:flex-row rounded-md">
                     <ul className="self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">

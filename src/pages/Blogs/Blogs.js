@@ -1,7 +1,7 @@
 
 const Blogs = () => {
     return (
-        <div>
+        <div className=" py-10 ">
             <div className='w-10/12 mx-auto border border-orange-400 p-4 rounded-lg '>
                 <div>
                     <h1 className="text-xl font-bold">What is Cors?</h1>

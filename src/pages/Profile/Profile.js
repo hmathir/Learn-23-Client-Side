@@ -22,7 +22,7 @@ const Profile = () => {
         })
     }
     return (
-        <div className="w-10/12 text-center md:w-6/12 mx-auto">
+        <div className="w-10/12 py-10 text-center md:w-6/12 mx-auto">
             <div className="">
                 <h1 className="text-2xl font-bold mb-5">Welcome {user?.displayName}</h1>
                 <img className="w-24 h-24 rounded-full inline text-center mb-5" src={user?.photoURL ? user.photoURL : teacher} alt="" />

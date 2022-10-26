@@ -1,7 +1,7 @@
 
 const FAQ = () => {
     return (
-        <div>
+        <div className=" py-10 ">
             <div className='w-10/12 mx-auto border border-orange-400 p-4 rounded-lg '>
 
                 <div className="collapse mt">

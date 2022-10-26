@@ -17,7 +17,6 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email,password,name,photoURL);
         signUpUsingEmail(email,password).then(()=>{
             updateUserProfile(name,photoURL).then(() => {
               }).catch((error) => {
@@ -28,7 +27,7 @@ const Register = () => {
             toast.success('Registration Successful')
         })
         .catch((e)=>{
-            console.log(e);
+
             if(e.message === 'Firebase: Password should be at least 6 characters (auth/weak-password).'){
                 toast.error('Password should not be lower than 6 characters');
             }
