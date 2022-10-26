@@ -86,6 +86,7 @@ Clean and organized Code (folder structure). Organize components with meaningful
 
 
 Optional (But Highly Recommended):
+-----DONE------
 Add a link for Password reset (use toast/ alert), (Don't worry if the email goes to the spam folder.)
 
 Add "active route" to indicate the route which you are visiting.

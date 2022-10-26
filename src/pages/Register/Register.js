@@ -59,20 +59,20 @@ const Register = () => {
                 <h1 className="text-2xl font-bold text-center text-orange-400">Sign Up</h1>
                 <form onSubmit={handleRegister} className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="name" className="block text-orange-400 font-bold">Name</label>
-                        <input htmlFor="text" name="name" id="name" placeholder="Name" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
+                        <label htmlFor="name" className="block text-orange-400 font-bold">Name*</label>
+                        <input required htmlFor="text" name="name" id="name" placeholder="Name" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="photoURL" className="block text-orange-400 font-bold">Photo URL</label>
+                        <label htmlFor="photoURL" className="block text-orange-400 font-bold">Photo URL (Optional)</label>
                         <input type="text" name="photoURL" id="photoURL" placeholder="Photo URL" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="email" className="block text-orange-400 font-bold">Email</label>
-                        <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
+                        <label htmlFor="email" className="block text-orange-400 font-bold">Email*</label>
+                        <input required type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="password" className="block text-orange-400 font-bold">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
+                        <label htmlFor="password" className="block text-orange-400 font-bold">Password*</label>
+                        <input required type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
                     </div>
                     <button className="block w-full p-3 text-center bg-orange-400 text-white rounded-lg">Register</button>
                 </form>

@@ -24,6 +24,9 @@ const Login = () => {
             if (e.message === 'Firebase: Error (auth/invalid-email).') {
                 toast.error('Invalid Email')
             }
+            else{
+                toast.error(e.message);
+            }
         })
     }
 
@@ -32,7 +35,12 @@ const Login = () => {
             navigate(from, { replace: true });
             toast.success("Sign In Succssful");
         }).catch((e) => {
-            toast.error(e.message)
+            if(e.message === 'Firebase: Error (auth/popup-closed-by-user).'){
+                toast.error('PopUp Closed By You.');
+            }else{
+                toast.error(e.message)
+            }
+
         })
     }
 
@@ -41,7 +49,11 @@ const Login = () => {
             navigate(from, { replace: true });
             toast.success("Sign In Succssful");
         }).catch((e) => {
-            toast.error(e.message)
+            if(e.message === 'Firebase: Error (auth/popup-closed-by-user).'){
+                toast.error('PopUp Closed By You.');
+            }else{
+                toast.error(e.message)
+            }
         })
     }
 
@@ -53,11 +65,11 @@ const Login = () => {
                 <form onSubmit={handleSingIn} className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="email" className="block text-orange-400 font-bold">Email</label>
-                        <input type="text" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
+                        <input required type="text" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label htmlFor="password" className="block text-orange-400 font-bold">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
+                        <input required type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
                         <div className="flex justify-end text-xs text-gray-400">
                             <Link to='/forget_password'>Forgot Password?</Link>
                         </div>
