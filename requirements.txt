@@ -100,10 +100,10 @@ Explore & use these react packages in your website : react-icons, react-image-ma
 
 Feel free to add some relevant FAQ in your FAQ route
 
-
+-----DONE------
 If you have sometime, try to implement dark/light theme toggle.
 
-
+-----DONE------
 Optional but highly recommended: A detailed, realistic, complex & stylish footer.
 
 

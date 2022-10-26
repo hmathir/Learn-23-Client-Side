@@ -10,7 +10,7 @@ const Header = () => {
     const { user, logOut } = useContext(AuthProvider);
 
     const userSignOut = () => {
-        logOut().then(()=>{}).catch(()=>{})
+        logOut().then(() => { }).catch(() => { })
     }
 
     return (
@@ -22,7 +22,7 @@ const Header = () => {
                 <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                     <Link to='/'>HOME</Link>
                     <Link to='/courses'>COURSES</Link>
-                    <Link>FAQ</Link>
+                    <Link to='/faqs'>FAQ</Link>
                     <Link to='/blogs'>BLOGS</Link>
                     <div className="md:hidden  cursor-pointer" onClick={() => { setToggle(!toggle) }}>
                         {
@@ -40,8 +40,8 @@ const Header = () => {
                     <ul className="space-x-6">
                         <Link to='/'>HOME</Link>
                         <Link to='/courses'>COURSES</Link>
-                        <Link>FAQ</Link>
-                       < Link to='/blogs'>BLOGS</Link>
+                        <Link to='/faqs'>FAQ</Link>
+                        < Link to='/blogs'>BLOGS</Link>
                     </ul>
                 </div>
             </div>
@@ -53,11 +53,11 @@ const Header = () => {
                 </div>
                 {
                     user ? <div className="tooltip tooltip-left" data-tip={user.displayName}>
-                        { <img className="first-letter:w-8 h-8 rounded-full inline mr-4" src={user.photoURL} alt='User Profile' /> || <FontAwesomeIcon icon={faUser} /> }
-                    <Link to='/'> <button onClick={userSignOut} className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Log Out</span></button></Link>
-                </div> : <div>
-                    <Link to='/login'> <button className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Login</span></button></Link>
-                </div>
+                        {<img className="first-letter:w-8 h-8 rounded-full inline mr-4" src={user.photoURL} alt='User Profile' /> || <FontAwesomeIcon icon={faUser} />}
+                        <Link to='/'> <button onClick={userSignOut} className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Log Out</span></button></Link>
+                    </div> : <div>
+                        <Link to='/login'> <button className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Login</span></button></Link>
+                    </div>
                 }
 
 
