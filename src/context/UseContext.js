@@ -11,7 +11,7 @@ export const AuthProvider = createContext();
 const UseContext = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [dark, setDark] = useState(false);
+    const [dark, setDark] = useState(true);
 
     //EMAIL PASS SIGNUP!
     const signUpUsingEmail = (email, password) => {

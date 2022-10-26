@@ -13,12 +13,12 @@ import { AuthProvider } from "../../context/UseContext";
 const Home = () => {
     const [swiper, setSwiper] = useState({});
     const courses = useLoaderData();
-    const {dark} = useContext(AuthProvider);
+    const { dark } = useContext(AuthProvider);
     return (
         <div>
 
-            <div className="bg-black py-10">
-                <div className="text-center text-white">
+            <div className={`py-10  ${dark ? "bg-black" : "bg-white"}`}>
+                <div className={`text-center ${dark ? "text-white" : "text-black"}`}>
                     <h1 className="text-3xl md:text-6xl font-bold">Popular Courses</h1>
                     <p className="text-xl mt-2" >Get 20% Discount on This October Only.</p>
                 </div>
@@ -40,65 +40,68 @@ const Home = () => {
                             </div>
                         </SwiperSlide>)}
                     </Swiper>
-                    <div className="text-white space-x-6 mt-5">
-                        <button className="border border-white rounded-3xl p-2" onClick={() => swiper.slidePrev()}> {'<'} </button>
-                        <button className="border border-white rounded-3xl p-2" onClick={() => swiper.slideNext()}> {'>'} </button>
+                    <div className={`${dark ? "text-white" : "text-black"} space-x-6 mt-5`}>
+                        <button className={`${dark ? "border-white" : "border-black"} border  rounded-3xl p-2`} onClick={() => swiper.slidePrev()}> {'<'} </button>
+                        <button className={`${dark ? "border-white" : "border-black"} border rounded-3xl p-2`} onClick={() => swiper.slideNext()}> {'>'} </button>
                     </div>
                 </div>
             </div>
 
             {/* Instractor Section */}
-            <div>
-                <div className="text-center py-16">
-                    <h1 className="text-3xl md:text-6xl font-bold">Our Achivement</h1>
-                </div>
-                <div className="w-11/12 mx-auto md:flex items-center">
-                    <div className="md:w-4/12">
-                        <img src={achivements} alt="" />
+            <div className={`py-10  ${dark ? "bg-black" : "bg-white"} ${dark ? "text-white" : "text-black"}`}>
+                <div className=" w-10/12 mx-auto">
+                    <div className="text-center py-16">
+                        <h1 className="text-3xl md:text-6xl font-bold">Our Achivement</h1>
                     </div>
-                    <div className="md:w-8/12 flex items-center justify-evenly">
-                        <div>
-                            <div className="flex items-center gap-2">
-                                <div>
-                                    <img src={teacher} alt="" />
+                    <div className="w-11/12 mx-auto md:flex items-center">
+                        <div className="md:w-4/12">
+                            <img className="rounded-full" src={achivements} alt="" />
+                        </div>
+                        <div className="md:w-8/12 flex items-center justify-evenly">
+                            <div>
+                                <div className="flex items-center gap-2">
+                                    <div>
+                                        <img src={teacher} alt="" />
+                                    </div>
+                                    <div>
+                                        <h1 className="md:text-4xl font-bold">150+</h1>
+                                        <p>Teachers</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h1 className="md:text-4xl font-bold">150+</h1>
-                                    <p>Teachers</p>
+                                <div className="flex items-center gap-2 mt-10">
+                                    <div>
+                                        <img src={students} alt="" />
+                                    </div>
+                                    <div>
+                                        <h1 className="md:text-4xl font-bold">50,000+</h1>
+                                        <p>Students</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-2 mt-10">
-                                <div>
-                                    <img src={students} alt="" />
+                            <div>
+                                <div className="flex items-center gap-2">
+                                    <div>
+                                        <img src={videos} alt="" />
+                                    </div>
+                                    <div>
+                                        <h1 className="md:text-4xl font-bold">500+</h1>
+                                        <p>Videos</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h1 className="md:text-4xl font-bold">50,000+</h1>
-                                    <p>Students</p>
+                                <div className="flex items-center gap-2 mt-10">
+                                    <div>
+                                        <img src={appuser} alt="" />
+                                    </div>
+                                    <div>
+                                        <h1 className="md:text-4xl font-bold">30,000+</h1>
+                                        <p>App Users</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <div className="flex items-center gap-2">
-                                <div>
-                                    <img src={videos} alt="" />
-                                </div>
-                                <div>
-                                    <h1 className="md:text-4xl font-bold">500+</h1>
-                                    <p>Videos</p>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-2 mt-10">
-                                <div>
-                                    <img src={appuser} alt="" />
-                                </div>
-                                <div>
-                                    <h1 className="md:text-4xl font-bold">30,000+</h1>
-                                    <p>App Users</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     );
