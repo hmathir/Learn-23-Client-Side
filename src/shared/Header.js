@@ -55,7 +55,7 @@ const Header = () => {
                     {
                         user ? <div className="tooltip tooltip-left flex items-center" data-tip={user.displayName}>
                             <NavLink to='/profile' className=" cursor-pointer">
-                                {<img className="first-letter:w-8 h-8 rounded-full inline mr-4" src={user?.photoURL ? user.photoURL : teacher} alt='User Profile' /> || <FontAwesomeIcon icon={faUser} />}
+                                {<img className="first-letter:w-8 h-8 rounded-full inline mr-4" src={user?.photoURL ? user.photoURL : teacher} alt='User Profile' referrerPolicy="no-referrer" /> || <FontAwesomeIcon icon={faUser} />}
                             </NavLink>
 
                             <NavLink to='/'> <button onClick={userSignOut} className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Log Out</span></button></NavLink>
