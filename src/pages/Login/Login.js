@@ -59,7 +59,7 @@ const Login = () => {
                         <label htmlFor="password" className="block text-orange-400 font-bold">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
                         <div className="flex justify-end text-xs text-gray-400">
-                            <Link rel="noopener noreferrer" href="#">Forgot Password?</Link>
+                            <Link to='/forget_password'>Forgot Password?</Link>
                         </div>
                     </div>
                     <button className="block w-full p-3 text-center bg-orange-400  text-white rounded-lg">Sign in</button>

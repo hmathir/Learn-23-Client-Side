@@ -57,6 +57,8 @@ Make your website mobile & desktop responsive (tablet responsive is optional).
 -----DONE------
 Display errors when the user's email address or password doesn't match.
 
+
+-----DONE------
 Clicking "Blog" will redirect to a public route. That route will have 4 questions & answers.
 
 4.1 what is cors?
@@ -67,8 +69,13 @@ Clicking "Blog" will redirect to a public route. That route will have 4 question
 
 4.4 What is Node? How does Node work?
 
+
+
+!!! LIVE SITE LIKE HAVE TO ADD !!!
 (client-side repo) Meaningful readme.md file containing your website name and link to your live site. And at least five bullet points mentioning your website's different features and functionality. And a list of technologies (frameworks, libraries) used in your project. (added a meaningful readme.md file for the server-side repo is optional)
 
+
+-----DONE------
 Create a 404 page.
 
 -----DONE------
