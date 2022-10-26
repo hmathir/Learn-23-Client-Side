@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,11 +7,13 @@ import appuser from '../../assets/appuser.webp';
 import students from '../../assets/students.webp';
 import teacher from '../../assets/teacher.webp';
 import videos from '../../assets/videos.webp';
+import { AuthProvider } from "../../context/UseContext";
 
 
 const Home = () => {
     const [swiper, setSwiper] = useState({});
     const courses = useLoaderData();
+    const {dark} = useContext(AuthProvider);
     return (
         <div>
 

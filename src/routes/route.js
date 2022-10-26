@@ -8,6 +8,7 @@ import FAQ from "../pages/FAQ/FAQ";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
+import Profile from "../pages/Profile/Profile";
 import Register from "../pages/Register/Register";
 import Error from "../shared/Error";
 import PrivateRoute from "./PrivateRoute";
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
             {
                 path: '/faqs',
                 element: <FAQ></FAQ>
+            },
+            {
+                path: '/profile',
+                element: <PrivateRoute><Profile></Profile></PrivateRoute>
             }
         ]
     }

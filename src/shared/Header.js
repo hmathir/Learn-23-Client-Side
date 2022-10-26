@@ -3,11 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.png';
+import teacher from '../assets/teacher.webp';
 import { AuthProvider } from "../context/UseContext";
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
-    const { user, logOut } = useContext(AuthProvider);
+    const { user, logOut, dark, setDark } = useContext(AuthProvider);
 
     const userSignOut = () => {
         logOut().then(() => { }).catch(() => { })
@@ -24,9 +25,9 @@ const Header = () => {
                     <Link to='/courses'>COURSES</Link>
                     <Link to='/faqs'>FAQ</Link>
                     <Link to='/blogs'>BLOGS</Link>
-                    <div className="md:hidden  cursor-pointer" onClick={() => { setToggle(!toggle) }}>
+                    <div className="md:hidden  cursor-pointer" onClick={() => { setDark(!dark) }}>
                         {
-                            toggle ? <div><p>Dark <FontAwesomeIcon icon={faMoon} /></p></div> : <p>Light <FontAwesomeIcon icon={faSun} /></p>
+                            dark ? <div><p>Dark <FontAwesomeIcon icon={faMoon} /></p></div> : <p>Light <FontAwesomeIcon icon={faSun} /></p>
                         }
                     </div>
                 </ul>
@@ -52,8 +53,11 @@ const Header = () => {
                     }
                 </div>
                 {
-                    user ? <div className="tooltip tooltip-left" data-tip={user.displayName}>
-                        {<img className="first-letter:w-8 h-8 rounded-full inline mr-4" src={user.photoURL} alt='User Profile' /> || <FontAwesomeIcon icon={faUser} />}
+                    user ? <div className="tooltip tooltip-left flex items-center" data-tip={user.displayName}>
+                        <Link to='/profile' className=" cursor-pointer">
+                            {<img className="first-letter:w-8 h-8 rounded-full inline mr-4" src={user?.photoURL ? user.photoURL : teacher} alt='User Profile' /> || <FontAwesomeIcon icon={faUser} />}
+                        </Link>
+
                         <Link to='/'> <button onClick={userSignOut} className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Log Out</span></button></Link>
                     </div> : <div>
                         <Link to='/login'> <button className="bg-gray-700 px-4 py-2 text-white hover:bg-black rounded"><FontAwesomeIcon icon={faRightToBracket} /><span className=" ml-2">Login</span></button></Link>
